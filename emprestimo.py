@@ -13,16 +13,12 @@ class Emprestimo:
 
     def __init__(self, exemplar, usuario, data_inicio, data_fim=None, data_devolucao=None, valor_multa=0, situacao_multa=None):
         # Lógica para emprestar o livro ao usuário
-        #print(f"dados user: ",vars(usuario))
-        #print(f"dados exemplar: ",vars(exemplar))
         if exemplar.esta_disponivel():
             #exemplar.disponivel = False
-            #print("rodou o exemplar.esta_disponivel() \n")
 
             if isinstance(usuario, Usuario):
                 data_fim = data_inicio + timedelta(days=usuario.dias_emprestimos)
-                if len(usuario.livros_emprestados) < usuario.quantidade_livros_max :
-                    #print(usuario.livros_emprestados)                    
+                if len(usuario.livros_emprestados) < usuario.quantidade_livros_max :                    
                     if usuario.tem_livro_em_atraso():
                         print("Você possui pelo menos um livro em atraso. Não é possível emprestar o livro.")
                     else:
@@ -44,18 +40,18 @@ class Emprestimo:
                         # Adiciona o livro na lista de emprestados por data
                         self.emprestimos.append(self)
                         
-                        print("Livro emprestado com sucesso. \n")
+                        print("\nLivro emprestado com sucesso. \n")
                         
                 else:
-                    print("Você atingiu o número máximo de livros. Não é possível emprestar o livro. \n")                
+                    print("\nVocê atingiu o número máximo de livros. Não é possível emprestar o livro. \n")                
         else:
-            print("Este exemplar não está disponível para empréstimo. \n")
+            print("\nEste exemplar não está disponível para empréstimo. \n")
 
 
     def calcular_multa(self, data_atual):
         if self.data_devolucao is None:
             return 0
-
+        #confirmar como é pra ser o calculo da multa
         dias_atraso = (data_atual - self.data_fim).days
         if dias_atraso > 0:
             multa_base = 2.50
@@ -76,13 +72,13 @@ class Emprestimo:
             if not self.usuario.tem_livro_em_atraso():
                 if not lista_espera.verificar_livro(self.exemplar.id_item) or lista_espera.fila==[]:
                     self.data_fim = nova_data_fim
-                    print("Empréstimo renovado com sucesso. \n")
+                    print("\nEmpréstimo renovado com sucesso. \n")
                 else:
-                    print("Há pessoas na lista de espera para este livro. Não é possível renovar o empréstimo. \n")
+                    print("\nHá pessoas na lista de espera para este livro. Não é possível renovar o empréstimo. \n")
             else:
-                print("Não é possível renovar o empréstimo devido a livros em atraso. \n")
+                print("\nNão é possível renovar o empréstimo devido a livros em atraso. \n")
         else:
-            print("A nova data de devolução deve ser posterior à data atual. \n")
+            print("\nA nova data de devolução deve ser posterior à data atual. \n")
 
     def devolver(self, data_devolucao):
         self.data_devolucao = data_devolucao
@@ -92,11 +88,11 @@ class Emprestimo:
                 self.valor_multa = multa
                 self.situacao_multa = "pendente"
                 self.usuario.multas[self.id_exemplar] = multa
-                print(f"Item devolvido com sucesso. Multa aplicada: R${multa:.2f}\n")
+                print(f"\nItem devolvido com sucesso. Multa aplicada: R${multa:.2f}\n")
             else:
-                print("Item devolvido com sucesso. \n")
+                print("\nItem devolvido com sucesso. \n")
         else:
-            print("Item devolvido com sucesso. \n")
+            print("\nItem devolvido com sucesso. \n")
 
     @staticmethod
     def listar_livros_emprestados():
