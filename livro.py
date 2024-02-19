@@ -39,7 +39,7 @@ class Livro(Item):
         with open("livros.txt", "r") as arquivo:
             for linha in arquivo:
                 dados_livro = linha.strip().split(",")
-                if int(dados_livro[5]) == int(id_livro):  # Índice 5 corresponde ao id do item no arquivo
-                    return dados_livro[0]  # Índice 0 corresponde ao título do livro
+                if int(dados_livro[5]) == int(id_livro):  # Índice 5 é o id do item no arquivo
+                    return dados_livro[0]  # Índice 0 é o título do livro
         return 'O livro com o ID especificado não foi encontrado'
             
