@@ -27,12 +27,6 @@ class FilaDeEspera:
             if id_livro == self.fila[i]['id_livro']:
                 return True
         return False
-    
-    '''def verificar_usuario(self, id_livro, id_usuario):
-        for i in range(len(self.fila)):
-            if id_livro == self.fila[i]['id_livro']:
-                return True
-        return False'''
 
     def listar_fila(self):
         print("Fila de espera:")
