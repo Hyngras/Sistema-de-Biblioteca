@@ -66,7 +66,7 @@ class Emprestimo:
         print("Multa paga com sucesso. \n")
 
     def renovar(self, lista_espera):
-        """Renova um empréstimo, se possível."""    
+        #Renova um empréstimo, se possível.    
         nova_data_fim = self.data_fim + timedelta(days=self.usuario.dias_emprestimos)
         if nova_data_fim > self.data_fim:
             if not self.usuario.tem_livro_em_atraso():
