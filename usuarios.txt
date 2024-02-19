@@ -5,6 +5,6 @@ rfjhfr,lui@oif.cmo,987654123,Curso EB,1/1/2001,Aluno de graduacao
 jijiij,lu@lj.com,534653,Curso R,1/1/2001,Aluno de graduacao
 Luana,luana.ufpebr,123456789,EB,26/06/2002,Aluno de graduacao
 Luana,luana@ufpe.br,12345678,Curso EB,26/06/2002,Aluno de graduacao
-João,joao@example.com,123456789,Ciência da Computação,1998-05-10,AlunoGraduacao
-Maria,maria@example.com,987654321,Engenharia Elétrica,1995-12-20,AlunoPosGraduacao
+João,joao@example.com,123456789,Ciência da Computação,1998-05-10,Aluno de graduacao
+Maria,maria@example.com,987654321,Engenharia Elétrica,1995-12-20,Aluno de pós-graduacao
 Carlos,carlos@example.com,555555555,Matemática,1970-03-25,Professor
