@@ -1,5 +1,4 @@
 from datetime import datetime
-#from emprestimo import Emprestimo
 from livro import Livro
 
 class Usuario:
@@ -11,7 +10,7 @@ class Usuario:
         self.nascimento = nascimento
         self.categoria = categoria
         self.livros_emprestados = []  # Lista de livros emprestados
-        #self.multas = {}  # Dicionário de multas (livro: valor)
+        # multas acessado pela lista mesmo
 
         if self.categoria == "Aluno de graduacao":
             self.dias_emprestimos = 7
@@ -23,19 +22,10 @@ class Usuario:
             self.dias_emprestimos = 60
             self.quantidade_livros_max = 15
         
-        try:
-            with open("usuarios.txt", "a") as arquivo:
-                arquivo.write(f"{self.nome},{self.email},{self.telefone},{self.filiacao},{self.nascimento},{self.categoria}\n")
-            print(f'\nUsuário(a) {self.nome} foi cadastrado com sucesso.\n')
-        except Exception as e:
-            print(f"Ocorreu um erro ao escrever no arquivo: {e}")
-
-
-
-    '''def cadastrar(self):
-        with open('usuarios.txt', "a") as arquivo:
+        with open("usuarios.txt", "a") as arquivo:
             arquivo.write(f"{self.nome},{self.email},{self.telefone},{self.filiacao},{self.nascimento},{self.categoria}\n")
-        print(f'O usuário {self.nome} foi cadastrado com sucesso.\n')'''
+        print(f'\nUsuário(a) {self.nome} foi cadastrado com sucesso.\n')
+
 
     def consultar(self):
         # Lógica para consultar informações de um usuário
@@ -76,7 +66,7 @@ class Usuario:
         fila_espera.entrar(id_livro, self.id)
 
     def renovar_livro(self, nova_data_fim, emprestimo):
-        """Renova um livro emprestado, se possível."""
+        #Renova um livro emprestado, se possível.
         emprestimo.renovar(self, nova_data_fim)
 
     def tem_livro_em_atraso(self):
