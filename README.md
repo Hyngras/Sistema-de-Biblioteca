@@ -26,3 +26,5 @@ Vocês terão que desenvolver um sistema de gerenciamento de bibliotecas que ger
       - Quantidade de dias em atraso por livro
   - O sistema deve implementar a arquitetura MVC [Model View Controller]
 
+## Execute o Main para rodar o código
+
