@@ -29,7 +29,7 @@ class Controller:
     @staticmethod
     def cadastrar_usuario(nome, email, telefone, filiacao, nascimento, categoria):
         usuario = Usuario(nome, email, telefone, filiacao, nascimento, categoria)
-        #usuario.cadastrar(usuario)
+        
 
     @staticmethod
     def realizar_emprestimo(exemplar, usuario):
