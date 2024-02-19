@@ -5,11 +5,11 @@ class Exemplar:
         self.disponivel = True
         
     def esta_disponivel(self):
-        """Verifica se o exemplar está disponível para empréstimo."""
+        #Verifica se o exemplar está disponível para empréstimo.
         return self.disponivel
 
     def emprestar(self):
-        """Marca o exemplar como emprestado."""
+        #Marca o exemplar como emprestado.
         if self.disponivel:
             self.disponivel = False
             print("Exemplar emprestado com sucesso. \n")
@@ -17,7 +17,7 @@ class Exemplar:
             print("Exemplar já emprestado. \n")
 
     def devolver(self):
-        """Marca o exemplar como devolvido."""
+        #Marca o exemplar como devolvido.
         if not self.disponivel:
             self.disponivel = True
             print("Exemplar devolvido com sucesso. \n")
